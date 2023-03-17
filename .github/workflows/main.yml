@@ -1,20 +1,13 @@
-name: CI
-
+name: Run tests on push
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-  
+    branches: [main]
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Run a one-line script
-      run: echo Gello, world
-      
-    - name: Run a multi-line script
-      run:
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: npm install
+    - name: Run tests
+      run: npm test
