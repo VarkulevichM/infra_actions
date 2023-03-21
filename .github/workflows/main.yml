@@ -49,4 +49,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: VarkulevichMM/infra_actions:latest
+          tags: varkulevichmm/infra_actions:latest
